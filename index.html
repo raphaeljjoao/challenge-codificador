@@ -10,20 +10,27 @@
 </head>
 <body>
     <nav>
-        <div id="logo">
-            <img src="assets/alura.svg" alt="Logo da Alura">
-        </div>
+        <img id="logo" src="assets/alura.svg" alt="Logo da Alura">
+        <h1>Código Secreto</h1>
     </nav>
 
     <main>
         <div class="campo" id="entrada">
-            <textarea id="" cols="50" rows="10"></textarea>
+            <h2>Entrada</h2>
+            <textarea id="text-entrada" placeholder="Digite seu texto"></textarea>
+            <div class="botoes">
+                <button id="criptografar">Criptografar</button>
+                <button id="descriptografar">Descriptografar</button>
+            </div>
+            <ul id="erros">
+            </ul>
         </div>
         <div class="campo" id="resultado">
-            <textarea id="" cols="50" rows="10"></textarea>
+            <h2>Saída</h2>
+            <textarea id="" placeholder="O resultado será exibido aqui"></textarea>
         </div>
     </main>
 
-    <footer>João Raphael - 2022 &copy;</footer>
+    <footer>2022 &copy; - Desenvolvido por <a href="https://www.inf.ufrgs.br/~jrfdorneles/">João Raphael</a></footer>
 </body>
 </html>
