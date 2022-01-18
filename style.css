@@ -16,27 +16,87 @@ nav, footer {
     color: #eee;
 }
 
+a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* Navbar */
 
 nav {
+    display: flex;
     padding: 20px 35px;
+    flex-basis: auto;
+    align-items: center;
 }
+
+nav img {
+    background-color: #eee;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
 
 /* Entrada e saída */
 
 main {
+    border: 2px solid #eee;
+    border-left: none;
+    border-right: none;
     padding: 50px 0;
     display: flex;
     justify-content: center;
 }
 
+.campo {
+    margin: 0 5px;
+    padding: 0 20px;
+    /* border: 3px solid red; */
+}
+
+.campo h2 { color: #eee; margin-bottom: .5em;}
+
 textarea {
     resize: vertical;
+    width: 40vw;
+    height: 20vh;
+    padding: 10px;
+}
+
+textarea:focus {
+    outline: 1.5px solid black;
+}
+
+#entrada .botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#entrada button {
+    background-color: white;
+    padding: 3vh 3vw;
+    margin: 6px;
+    border: none;
+    border-top: 4px solid #333;
+    font-weight: 600;
+}
+
+#entrada button:hover { cursor: pointer; }
+
+ul#erros {
+    list-style: none;
+}
+
+ul#erros li {
+    color: rgb(255, 159, 159);
+    text-align: justify;
 }
 
 /* Footer */
 footer {
     padding: 50px 0;
-    border-top: 2px solid #eee;
     text-align: center;
 }
