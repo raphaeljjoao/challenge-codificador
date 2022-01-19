@@ -112,6 +112,7 @@ button#descriptografar {
 
 ul#erros {
     list-style: none;
+    margin-top: 15px;
 }
 
 ul#erros li {
