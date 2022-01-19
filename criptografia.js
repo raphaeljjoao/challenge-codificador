@@ -8,6 +8,7 @@ const botaoDecrypt = document.getElementById('descriptografar');
 
 /* Erros */
 const listaErros = document.getElementById('erros');
+let entradaValida = true;
 
 /* Lógica de Criptografia */
 
@@ -30,12 +31,11 @@ function confereEntrada(texto){
     let erros = [];
     let textoAcentuado = false;
     let acentuados = 'àèìòùâêîôûäëïöüáéíóúãõ'.split('');
-    console.log(acentuados);
 
 
     for (let i = 0; i < acentuados.length; i++){
         let letra = acentuados[i];
-        if (texto.includes(letra)){
+        if (texto.toLowerCase().includes(letra)){
             textoAcentuado = true;
             break;
         }
@@ -49,11 +49,11 @@ function confereEntrada(texto){
 
 /* Eventos */
 botaoEncrypt.addEventListener('click', function(){
-    resultado.textContent = criptografar(entrada.value);
+    if (entradaValida) resultado.textContent = criptografar(entrada.value);
 });
 
 botaoDecrypt.addEventListener('click', function(){
-    resultado.textContent = descriptografar(entrada.value);
+    if (entradaValida) resultado.textContent = descriptografar(entrada.value);
 });
 
 entrada.addEventListener('input', function(){
@@ -65,4 +65,17 @@ entrada.addEventListener('input', function(){
 
         listaErros.appendChild(li);
     });
+
+    // Bloqueio dos botões
+    botaoEncrypt.classList.remove('bloqueado');
+    botaoDecrypt.classList.remove('bloqueado');
+
+    entradaValida = true;
+
+    if (erros.length > 0){
+        botaoEncrypt.classList.add('bloqueado');
+        botaoDecrypt.classList.add('bloqueado');
+
+        entradaValida = false;
+    }
 });
