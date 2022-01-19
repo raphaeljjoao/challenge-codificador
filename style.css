@@ -8,32 +8,34 @@
 }
 
 body {
-    background-color: #505050;
+    background-color: #F3F5FC;
+    color: #333;
 }
 
-nav, footer {
-    background-color: #333;
-    color: #eee;
+a, textarea, textarea::placeholder {
+    color: #0a3871;
+    font-weight: 500;
 }
 
 a {
-    color: #eee;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
 }
+
+h1 { font-size: 2.35rem; }
+h2 { font-size: 2rem; }
+
 
 /* Navbar */
 
 nav {
     display: flex;
     padding: 20px 35px;
-    flex-basis: auto;
     align-items: center;
 }
 
 nav img {
-    background-color: #eee;
-    padding: 10px 20px;
+    padding: 10px;
     margin-right: 10px;
 }
 
@@ -41,7 +43,7 @@ nav img {
 /* Entrada e saída */
 
 main {
-    border: 2px solid #eee;
+    /* border: 2px solid #333; */
     border-left: none;
     border-right: none;
     padding: 50px 0;
@@ -55,22 +57,31 @@ main {
     /* border: 3px solid red; */
 }
 
-.campo h2 { color: #eee; margin-bottom: .5em;}
+.campo h2 { margin-bottom: .5em; }
+
+#entrada { width: 61vw; }
+#resultado { width: 25vw; }
 
 textarea {
+    background-color: transparent;
     resize: vertical;
-    background-color: white;
-    width: 40vw;
-    min-height: 75vh;
-    padding: 10px;
-    font-size: 1.05em;
+    width: 100%;
+    min-height: 65vh;
+    max-height: 80vh;
+    padding: 20px;
+    font-size: 1.2em;
+    border: none;
 }
 
 textarea:focus {
-    outline: 1.5px solid black;
+    outline: none;
+    background-color: #e8edfc;
+    transition: all 100ms ease-in-out;
 }
 
 /* Entrada */
+
+#text-entrada { border-radius: 15px; }
 
 #entrada .botoes {
     display: flex;
@@ -80,13 +91,27 @@ textarea:focus {
 }
 
 #entrada button {
+    /*
     background-color: white;
-    padding: 3vh 3vw;
+    border-top: 4px solid #0a3871;
+    */
+    padding: 3vh 6vw;
     margin: 6px;
     border: none;
-    border-top: 4px solid #333;
-    font-weight: 600;
+    border-radius: 20px;
 }
+
+button#criptografar {
+    background-color: #0a3871;
+    color: #eee;
+}
+
+button#descriptografar {
+    background-color: #e8edfc;
+    color: #0a3871;
+    border: 1px solid #0a3871;
+}
+
 
 #entrada button:hover { cursor: pointer; }
 
@@ -96,8 +121,11 @@ textarea:focus {
     background: url(assets/saida-background.svg);
     background-repeat: no-repeat;
     background-color: white;
-    background-size: 80%;
+    background-size: contain;
     background-position: center center;
+
+    border: 1px solid #333;
+    border-radius: 32px;
 }
 
 .remove-background {
@@ -112,23 +140,24 @@ ul#erros {
 }
 
 ul#erros li {
-    color: #ff9f9f;
+    color: #495057;
     margin-bottom: 7px;
+    transition: all 50ms ease-in-out;
 }
 
 #erros li::before {
-    /* Imagem disponibilizada no Figma
     content: url(assets/aviso.png);
     filter: invert(1);
     margin-right: .3em;
-    */
+    /*
     content: '!';
     font-size: .85em;
     margin-right: .45em;
-    background-color: #ff9f9f;
+    background-color: #495057;
     color: #eee;
     padding: .2em .75em;
     border-radius: 100%;
+    */
 
 }
 
