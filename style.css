@@ -59,14 +59,18 @@ main {
 
 textarea {
     resize: vertical;
+    background-color: white;
     width: 40vw;
-    height: 20vh;
+    min-height: 75vh;
     padding: 10px;
+    font-size: 1.05em;
 }
 
 textarea:focus {
     outline: 1.5px solid black;
 }
+
+/* Entrada */
 
 #entrada .botoes {
     display: flex;
@@ -85,6 +89,21 @@ textarea:focus {
 }
 
 #entrada button:hover { cursor: pointer; }
+
+/* Resultado (saída) */
+
+#text-resultado {
+    background: url(assets/saida-background.svg);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 80%;
+    background-position: center center;
+}
+
+.remove-background {
+    background-size: 0 !important;
+    transition: all 250ms ease-in-out;
+}
 
 /* Erros */
 
