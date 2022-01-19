@@ -17,12 +17,12 @@ const saida = ['enter', 'imes', 'ai', 'ober', 'ufat'];
 /* Funções */
 
 function criptografar(texto){
-    for (let i = 0; i < vogais.length; i++) texto = texto.replace(vogais[i], saida[i]);
+    for (let i = 0; i < vogais.length; i++) texto = texto.replaceAll(vogais[i], saida[i]);
     return texto;
 }
 
 function descriptografar(texto){
-    for (let i = 0; i < vogais.length; i++) texto = texto.replace(saida[i], vogais[i]);
+    for (let i = 0; i < vogais.length; i++) texto = texto.replaceAll(saida[i], vogais[i]);
     return texto;
 }
 
