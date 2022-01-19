@@ -22,51 +22,30 @@ a {
     font-weight: 700;
 }
 
-h1 { font-size: 2.35rem; }
-h2 { font-size: 2rem; }
-
-
 /* Navbar */
 
-nav {
-    display: flex;
-    padding: 20px 35px;
-    align-items: center;
-}
-
-nav img {
-    padding: 10px;
-    margin-right: 10px;
-}
-
+nav { padding: 0 50px; }
+nav img { margin-top: 30px; }
 
 /* Entrada e saída */
 
 main {
-    /* border: 2px solid #333; */
-    border-left: none;
-    border-right: none;
-    padding: 50px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
 }
 
-.campo {
-    margin: 0 5px;
-    padding: 0 20px;
-    /* border: 3px solid red; */
-}
+.campo { margin: 0 7px; }
 
-.campo h2 { margin-bottom: .5em; }
-
-#entrada { width: 61vw; }
-#resultado { width: 25vw; }
+#entrada { width: 62vw; }
+#resultado { width: 26vw; }
 
 textarea {
     background-color: transparent;
     resize: vertical;
     width: 100%;
-    min-height: 65vh;
+    min-height: 50vh;
+    height: 65vh;
     max-height: 80vh;
     padding: 20px;
     font-size: 1.2em;
@@ -76,7 +55,7 @@ textarea {
 textarea:focus {
     outline: none;
     background-color: #e8edfc;
-    transition: all 100ms ease-in-out;
+    transition: all 250ms ease-in-out;
 }
 
 /* Entrada */
@@ -91,10 +70,6 @@ textarea:focus {
 }
 
 #entrada button {
-    /*
-    background-color: white;
-    border-top: 4px solid #0a3871;
-    */
     padding: 3vh 6vw;
     margin: 6px;
     border: none;
@@ -130,7 +105,7 @@ button#descriptografar {
 
 .remove-background {
     background-size: 0 !important;
-    transition: all 250ms ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 /* Erros */
@@ -158,17 +133,16 @@ ul#erros li {
     padding: .2em .75em;
     border-radius: 100%;
     */
-
 }
 
 .bloqueado { cursor: not-allowed !important; }
 
 /* Footer */
 footer {
-    padding: 50px 0;
+    margin: 60px 0;
     text-align: center;
 }
 
 .social {
-    margin-top: 10px;
+    margin-top: 15px;
 }
