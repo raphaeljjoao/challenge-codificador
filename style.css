@@ -86,14 +86,34 @@ textarea:focus {
 
 #entrada button:hover { cursor: pointer; }
 
+/* Erros */
+
 ul#erros {
     list-style: none;
 }
 
 ul#erros li {
-    color: rgb(255, 159, 159);
-    text-align: justify;
+    color: #ff9f9f;
+    margin-bottom: 7px;
 }
+
+#erros li::before {
+    /* Imagem disponibilizada no Figma
+    content: url(assets/aviso.png);
+    filter: invert(1);
+    margin-right: .3em;
+    */
+    content: '!';
+    font-size: .85em;
+    margin-right: .45em;
+    background-color: #ff9f9f;
+    color: #eee;
+    padding: .2em .75em;
+    border-radius: 100%;
+
+}
+
+.bloqueado { cursor: not-allowed !important; }
 
 /* Footer */
 footer {
