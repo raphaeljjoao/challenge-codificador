@@ -99,6 +99,7 @@ textarea:focus {
     margin: 6px;
     border: none;
     border-radius: 20px;
+    font-size: 1em;
 }
 
 button#criptografar {
@@ -137,6 +138,7 @@ button#descriptografar {
 
 ul#erros {
     list-style: none;
+    margin-top: 20px;
 }
 
 ul#erros li {
