@@ -52,15 +52,17 @@ textarea {
     border: none;
 }
 
-textarea:focus {
-    outline: none;
-    background-color: #e8edfc;
-    transition: all 250ms ease-in-out;
-}
+textarea:focus { outline: none; }
 
 /* Entrada */
 
 #text-entrada { border-radius: 15px; }
+
+#text-entrada:focus {
+    background-color: #e8edfc;
+    transition: all 250ms ease-in-out;
+}
+
 
 #entrada .botoes {
     display: flex;
@@ -96,16 +98,16 @@ button#descriptografar {
     background: url(assets/saida-background.svg);
     background-repeat: no-repeat;
     background-color: white;
-    background-size: contain;
+    background-size: 100%;
     background-position: center center;
-
     border: 1px solid #333;
     border-radius: 32px;
 }
 
+
 .remove-background {
-    background-size: 0 !important;
-    transition: all 2s ease-in-out;
+    background-size: 0% !important;
+    transition: all 250ms ease-in-out;
 }
 
 /* Erros */
