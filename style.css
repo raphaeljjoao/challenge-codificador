@@ -37,20 +37,20 @@ main {
 
 .campo { margin: 0 7px; }
 
-#entrada { width: 62vw; }
-#resultado { width: 26vw; }
+#entrada { width: 65vw; }
+#resultado { width: 20vw; margin-top: -10vh; }
 
 textarea {
     background-color: transparent;
-    resize: vertical;
+    resize: none;
     width: 100%;
-    min-height: 50vh;
-    height: 65vh;
-    max-height: 80vh;
     padding: 20px;
     font-size: 1.2em;
     border: none;
 }
+
+#text-entrada { height: 57vh; }
+#text-resultado { height: 90vh; }
 
 textarea:focus { outline: none; }
 
