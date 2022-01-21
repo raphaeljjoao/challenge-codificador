@@ -1,0 +1,29 @@
+/* Tablet */
+@media (max-width: 1000px) {
+    #entrada { width: 50vw; }
+    #resultado { width: 30vw; }
+}
+
+/* Celular */
+@media (max-width: 650px) {
+    main {
+        display: block;
+    }
+
+    .campo, textarea {
+        margin: auto;
+    }
+
+    #entrada, #resultado {
+        width: 80vw; 
+        margin-top: 0;
+    }
+
+    #text-entrada, #text-resultado {
+        height: 35vh;
+    }
+
+    #text-resultado {
+        background-size: 35vh;
+    }
+}
