@@ -18,8 +18,12 @@ const saida = ['enter', 'imes', 'ai', 'ober', 'ufat'];
 /* Funções */
 
 // Comportamento comum para criptografia e descriptografia
-function atualizaBackgroundResultado(){
-    resultado.classList.add('remove-background');
+function removeBackground(elemento){
+    elemento.classList.add('remove-background');
+}
+
+function restauraBackground(elemento){
+    elemento.classList.remove('remove-background');
 }
 
 function criptografar(texto){
@@ -56,14 +60,14 @@ function confereEntrada(texto){
 botaoEncrypt.addEventListener('click', function(){
     if (entradaValida){
         resultado.textContent = criptografar(entrada.value);
-        atualizaBackgroundResultado();
+        removeBackground(resultado);
     }
 });
 
 botaoDecrypt.addEventListener('click', function(){
     if (entradaValida){
         resultado.textContent = descriptografar(entrada.value);
-        atualizaBackgroundResultado();
+        removeBackground(resultado);
     }
 });
 
