@@ -27,6 +27,10 @@ const saida = ['enter', 'imes', 'ai', 'ober', 'ufat'];
 function comportamentoPadrao(){
     entrada.value = '';
     removeBackground(resultado);
+    botaoCopiar.classList.remove('bloqueado');
+    botaoLimpar.classList.remove('bloqueado');
+    botaoEncrypt.classList.add('bloqueado');
+    botaoDecrypt.classList.add('bloqueado');
 }
 
 
@@ -88,21 +92,22 @@ botaoCopiar.addEventListener('click', function(){
     if (valorResultado != ''){
         navigator.clipboard.writeText(resultado.value);
         textoCopiar.textContent = 'Copiado com sucesso para a área de transferência.';
-    } else {
-        textoCopiar.textContent = 'Não foi possível copiar para a área de transferência.';
-        textoCopiar.classList.add('modal-erro');
+        modalCopiar.classList.add('show-modal');
+        setTimeout(() => {
+            modalCopiar.classList.remove('show-modal');
+        }, 1400);
     }
     
-    modalCopiar.classList.add('show-modal');
-    setTimeout(() => {
-        modalCopiar.classList.remove('show-modal');
-        textoCopiar.classList.remove('modal-erro');
-    }, 1400);
 });
 
 botaoLimpar.addEventListener('click', function(){
-    resultado.value = '';
-    restauraBackground(resultado);
+    let valorResultado = resultado.value;
+    if (valorResultado != ''){
+        resultado.value = '';
+        restauraBackground(resultado);
+        botaoCopiar.classList.add('bloqueado');
+        botaoLimpar.classList.add('bloqueado');
+    }
 });
 
 entrada.addEventListener('input', function(){
@@ -121,7 +126,7 @@ entrada.addEventListener('input', function(){
 
     entradaValida = true;
 
-    if (erros.length > 0){
+    if (erros.length > 0 || entrada.value == ''){
         botaoEncrypt.classList.add('bloqueado');
         botaoDecrypt.classList.add('bloqueado');
 

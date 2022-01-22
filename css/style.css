@@ -137,11 +137,6 @@ button#btn-descriptografar, button#btn-limpar {
     padding: 3vh 5vw;
 }
 
-.modal-erro {
-    background-color: lightgray !important;
-    color: #0a3871 !important;
-}
-
 .remove-background { background-size: 0% !important; }
 
 /* Erros */
