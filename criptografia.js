@@ -71,7 +71,7 @@ function validaEntrada(texto){
     // Validação de números
     for (let i = 0; i < texto.length; i++){
         letra = texto[i];
-        if (!isNaN(letra)){
+        if (Number.isInteger(parseInt(letra))){
             contemNumeros = true;
             break;
         }
