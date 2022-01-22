@@ -85,11 +85,6 @@ button#btn-descriptografar, button#btn-limpar {
 
 #text-entrada { border-radius: 15px; }
 
-#text-entrada:focus {
-    background-color: #e8edfc;
-    transition: all 250ms ease-in-out;
-}
-
 /* Resultado (saída) */
 
 #text-resultado {
