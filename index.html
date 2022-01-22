@@ -13,18 +13,22 @@
     <nav>
         <img id="logo" src="img/alura.svg" alt="Logo da Alura">
     </nav>
-
+    
     <main>
         <div class="campo" id="entrada">
             <textarea id="text-entrada" placeholder="Digite seu texto" autofocus></textarea>
             <ul id="erros"></ul>
             <div class="botoes">
-                <button id="criptografar">Criptografar</button>
-                <button id="descriptografar">Descriptografar</button>
+                <button id="btn-criptografar">Criptografar</button>
+                <button id="btn-descriptografar">Descriptografar</button>
             </div>
         </div>
         <div class="campo" id="resultado">
             <textarea id="text-resultado" readonly></textarea>
+            <div class="botoes">
+                <button id="btn-copiar">Copiar</button>
+                <button id="btn-limpar">Limpar</button>
+            </div>
         </div>
     </main>
     <footer>
@@ -34,6 +38,9 @@
             <a href="https://www.linkedin.com/in/joaoraphael" target="_blank"><img src="img/social/linkedin.png" alt="Logo do GitHub"></a>
         </div>
     </footer>
+    <div id="modal-copiar" class="modal">
+        <p id="modal-copiar-texto"></p>
+    </div>
     <script src="criptografia.js"></script>
 </body>
 </html>

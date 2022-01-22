@@ -38,7 +38,7 @@ main {
 .campo { margin: 0 7px; }
 
 #entrada { width: 65vw; }
-#resultado { width: 20vw; margin-top: -10vh; }
+#resultado { width: 20vw; margin-top: -12vh; }
 
 textarea {
     background-color: transparent;
@@ -50,9 +50,36 @@ textarea {
 }
 
 #text-entrada { height: 57vh; }
-#text-resultado { height: 90vh; }
+#text-resultado { height: 65vh; }
 
 textarea:focus { outline: none; }
+
+button {
+    padding: 3vh 6vw;
+    margin: 6px;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover { cursor: pointer; }
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+button#btn-criptografar, button#btn-copiar {
+    background-color: #0a3871;
+    color: #eee;
+}
+
+button#btn-descriptografar, button#btn-limpar {
+    background-color: #e8edfc;
+    color: #0a3871;
+    border: 1px solid #0a3871;
+}
 
 /* Entrada */
 
@@ -62,35 +89,6 @@ textarea:focus { outline: none; }
     background-color: #e8edfc;
     transition: all 250ms ease-in-out;
 }
-
-
-#entrada .botoes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-#entrada button {
-    padding: 3vh 6vw;
-    margin: 6px;
-    border: none;
-    border-radius: 20px;
-}
-
-button#criptografar {
-    background-color: #0a3871;
-    color: #eee;
-}
-
-button#descriptografar {
-    background-color: #e8edfc;
-    color: #0a3871;
-    border: 1px solid #0a3871;
-}
-
-
-#entrada button:hover { cursor: pointer; }
 
 /* Resultado (saída) */
 
@@ -102,13 +100,54 @@ button#descriptografar {
     background-position: center center;
     border: 1px solid #333;
     border-radius: 32px;
-}
-
-
-.remove-background {
-    background-size: 0% !important;
     transition: all 250ms ease-in-out;
 }
+
+/* Modal do botão copiar */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(232, 237, 252); 
+    text-align: center;
+    animation: reveal 1500ms ease-in-out;
+}
+
+
+@keyframes reveal {
+    50% {
+        opacity: 1;
+        background-color: rgba(232, 237, 252, .75); 
+    }
+
+    100% {
+        background-color: transparent;
+        opacity: 0;
+    }
+}
+
+.show-modal {
+    display: block;
+}
+
+.modal p {
+    display: inline-block;
+    margin-top: 40vh;
+    background-color: #0a3871;
+    color: #e8edfc;
+    margin: inherit auto;
+    padding: 3vh 5vw;
+}
+
+.modal-erro {
+    background-color: lightgray !important;
+    color: #0a3871 !important;
+}
+
+.remove-background { background-size: 0% !important; }
 
 /* Erros */
 

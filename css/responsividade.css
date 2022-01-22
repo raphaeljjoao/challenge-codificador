@@ -1,7 +1,10 @@
 /* Tablet */
 @media (max-width: 1000px) {
     #entrada { width: 50vw; }
-    #resultado { width: 30vw; }
+    #resultado {
+        width: 35vw;
+        margin-top: -7vh;
+    }
 }
 
 /* Celular */

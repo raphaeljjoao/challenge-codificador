@@ -3,8 +3,14 @@ const entrada = document.getElementById('text-entrada');
 const resultado = document.getElementById('text-resultado');
 
 /* Botões */
-const botaoEncrypt = document.getElementById('criptografar');
-const botaoDecrypt = document.getElementById('descriptografar');
+const botaoEncrypt = document.getElementById('btn-criptografar');
+const botaoDecrypt = document.getElementById('btn-descriptografar');
+const botaoCopiar = document.getElementById('btn-copiar');
+const botaoLimpar = document.getElementById('btn-limpar');
+
+/* Modals */
+const modalCopiar = document.getElementById('modal-copiar');
+const textoCopiar = document.getElementById('modal-copiar-texto');
 
 /* Erros */
 const listaErros = document.getElementById('erros');
@@ -64,17 +70,39 @@ function confereEntrada(texto){
 
 /* Eventos */
 botaoEncrypt.addEventListener('click', function(){
-    if (entradaValida){
+    if (entradaValida && entrada.value != ''){
         resultado.textContent = criptografar(entrada.value);
         comportamentoPadrao();
     }
 });
 
 botaoDecrypt.addEventListener('click', function(){
-    if (entradaValida){
+    if (entradaValida && entrada.value != ''){
         resultado.textContent = descriptografar(entrada.value);
         comportamentoPadrao();
     }
+});
+
+botaoCopiar.addEventListener('click', function(){
+    let valorResultado = resultado.value;
+    if (valorResultado != ''){
+        navigator.clipboard.writeText(resultado.value);
+        textoCopiar.textContent = 'Copiado com sucesso para a área de transferência.';
+    } else {
+        textoCopiar.textContent = 'Não foi possível copiar para a área de transferência.';
+        textoCopiar.classList.add('modal-erro');
+    }
+    
+    modalCopiar.classList.add('show-modal');
+    setTimeout(() => {
+        modalCopiar.classList.remove('show-modal');
+        textoCopiar.classList.remove('modal-erro');
+    }, 1400);
+});
+
+botaoLimpar.addEventListener('click', function(){
+    resultado.value = '';
+    restauraBackground(resultado);
 });
 
 entrada.addEventListener('input', function(){
