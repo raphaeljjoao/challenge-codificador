@@ -52,12 +52,14 @@ function descriptografar(texto){
     return texto;
 }
 
-function confereEntrada(texto){
+function validaEntrada(texto){
     let erros = [];
     let textoAcentuado = false;
+    let contemNumeros = false;
     let acentuados = 'àèìòùâêîôûäëïöüáéíóúãõ'.split('');
 
 
+    // Validação de acentuação
     for (let i = 0; i < acentuados.length; i++){
         let letra = acentuados[i];
         if (texto.toLowerCase().includes(letra)){
@@ -65,8 +67,18 @@ function confereEntrada(texto){
             break;
         }
     }
+
+    // Validação de números
+    for (let i = 0; i < texto.length; i++){
+        letra = texto[i];
+        if (!isNaN(letra)){
+            contemNumeros = true;
+            break;
+        }
+    }
     
     if (texto.toLowerCase() != texto) erros.push('Apenas letras minúsculas.');
+    if (contemNumeros) erros.push('Não insira números.')
     if (textoAcentuado) erros.push('Não utilize acentuação.');
 
     return erros;
@@ -112,7 +124,7 @@ botaoLimpar.addEventListener('click', function(){
 
 entrada.addEventListener('input', function(){
     listaErros.innerHTML = '';
-    let erros = confereEntrada(entrada.value);
+    let erros = validaEntrada(entrada.value);
     erros.forEach(function(erro){
         let li = document.createElement('li');
         li.textContent = erro;
